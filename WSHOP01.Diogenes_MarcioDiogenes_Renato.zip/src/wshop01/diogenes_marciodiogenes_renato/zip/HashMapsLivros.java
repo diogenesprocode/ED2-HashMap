@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Marcio
+ *
  */
 public class HashMapsLivros {
     //declara o hashmape seus parametors
@@ -28,7 +28,7 @@ public class HashMapsLivros {
         livro.setIsbn(entrada.nextInt());
         //metodo containsKey do hash map, verifica se um indice ja existe 
         if(mapeamentoDeLivros.containsKey(livro.getIsbn())){
-            System.out.println("Erro: Numero ISBN Não encontrado!");   
+            System.out.println("Erro: Numero ja cadastrado!");   
         }else{
             System.out.println( "Titulo :");
             livro.setTitulo(entrada.next());
@@ -44,20 +44,32 @@ public class HashMapsLivros {
     public void procurarLivro() {
         System.out.println("Digite um ISBN para pesquisa:");
         int valorPsquisa = entrada.nextInt();
- 
-        try {  
+    
              //metodo containsKey do hash map, verifica se um indice existe 
-            if( !mapeamentoDeLivros.containsKey(valorPsquisa) )  
-                throw new Exception();  
+            if( !mapeamentoDeLivros.containsKey(valorPsquisa) ){  
+                 System.out.println("Erro: Numero ISBN Não encontrado!");  
+            }else{     
             // metodo get(valor indice)ja pega o objeto  no indice passado como parametro  
             System.out.println( "ISBN:   "+ mapeamentoDeLivros.get(valorPsquisa).getIsbn());  
             System.out.println( "Titulo: "+ mapeamentoDeLivros.get(valorPsquisa).getTitulo());  
             System.out.println( "Autor:  "+ mapeamentoDeLivros.get(valorPsquisa).getAutor());  
             System.out.println( "Ano:    "+ mapeamentoDeLivros.get(valorPsquisa).getAno());  
-        }  
-        catch( Exception e){  
-            System.out.println("Erro: Numero ISBN Não encontrado!");         
-        }  
-      
-    }//fim do metodo entradaDoUsuario 
+            }  
+    
+    }
+    
+    public void excluirLivro(){
+        System.out.println("Digite um ISBN para apagar:");
+        int valorPsquisa = entrada.nextInt();
+            //metodo containsKey do hash map, verifica se um indice existe 
+            if( !mapeamentoDeLivros.containsKey(valorPsquisa) ) { 
+                System.out.println("Erro: Numero ISBN Não encontrado!"); 
+           
+            }else{  
+                //metoro remove() retira da lista o objeto que esta no indice passado como parametro
+                mapeamentoDeLivros.remove(valorPsquisa);
+                System.out.println("Livro Apagado !");  
+            }
+           
+    }
 }

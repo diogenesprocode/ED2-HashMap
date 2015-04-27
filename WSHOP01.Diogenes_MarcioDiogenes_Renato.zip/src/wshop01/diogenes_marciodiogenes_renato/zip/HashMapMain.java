@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Marcio
+ * classe de execução
  */
 public class HashMapMain {
     
@@ -34,7 +34,10 @@ public class HashMapMain {
                     break;
                 case 2 :
                     mapsLivros.procurarLivro();
-                    break;    
+                    break; 
+                case 3 :
+                    mapsLivros.excluirLivro();
+                    break;
             }
             
        }while(op!=0); 
