@@ -22,6 +22,7 @@ public class HashMapMain {
             System.out.println( "Digite 0 para sair ");
             System.out.println( "Digite 1 para cadastrar um novo livro ");
             System.out.println( "Digite 2 para Pesquisar um livro ");
+            System.out.println( "Digite 3 para apagar um livro ");
             System.out.println( "Digite uma opção: ");
             op=entrada.nextInt();
             
